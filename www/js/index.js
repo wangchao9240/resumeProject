@@ -425,50 +425,46 @@
 		}
 	})
 
-	// //调用微信接口
-	$.post('http://2.592606942.applinzi.com/php/getSign.php',{
-	        url:window.location.href
-	    },function(data){
-	        pos=data.indexOf('}');
-	        dataStr=data.substring(0,pos+1);
+	//原生app拍照
+	$('.back').tap(function(){
+		captureImage();
+	})
+	$('.more').tap(function(){
+		galleryImgs();
+	})
+	// 扩展API加载完毕后调用onPlusReady回调函数 
+	document.addEventListener( "plusready", onPlusReady, false );
+	// 扩展API加载完毕，现在可以正常调用扩展API 
+	function onPlusReady() {
+		console.log("plusready");
+	}
+	// 拍照
+	function captureImage(){
+		var cmr = plus.camera.getCamera();
+		var res = cmr.supportedImageResolutions[0];
+		var fmt = cmr.supportedImageFormats[0];
+		console.log("Resolution: "+res+", Format: "+fmt);
+		cmr.captureImage( function( path ){
+				alert( "Capture image success: " + path );  
+			},
+			function( error ) {
+				alert( "Capture image failed: " + error.message );
+			},
+			{resolution:res,format:fmt}
+		);
+	}
 
-	        objData=JSON.parse(dataStr);
-
-	        wx.config({
-	   		 debug: true,
-	   		 appId:objData.appId,
-	  		 timestamp: objData.timestamp,
-	   		 nonceStr: objData.nonceStr,
-	    	 signature: objData.signature,
-	    	 jsApiList: [
-	      		// 所有要调用的 API 都要加到这个列表中
-	     		 'chooseImage','scanQRCode'
-	    	 ]
-	    })  
-	});
-
-	wx.ready(function() {
-		// 在这里调用 API
-		$('.back').tap(function(){
-			wx.chooseImage({
-				count: 1, // 默认9
-				sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-				sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-				success: function(res) {
-					var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-				}
-			});
-		})
-		$('.more').tap(function() {
-			wx.scanQRCode({
-				needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-				scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
-				success: function(res) {
-					var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-				}
-			});
-		})
-	});
+	function galleryImgs(){
+		// 从相册中选择图片
+		console.log("从相册中选择多张图片:");
+	    plus.gallery.pick( function(e){
+	    	for(var i in e.files){
+		    	console.log(e.files[i]);
+	    	}
+	    }, function ( e ) {
+	    	console.log( "取消选择图片" );
+	    },{filter:"image",multiple:true});
+	}
 
 /***/ },
 /* 2 */
