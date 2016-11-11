@@ -8,10 +8,13 @@
 		display: flex;
 			display: -webkit-flex;
 		align-items:center;
-		padding: 0 0.1rem;
+		padding: 0 0.15rem;
 	}
 	.iconfont{
 		font-size: 0.4rem;
+	}
+	.title{
+		font-size: 26px;
 	}
 }
 
@@ -49,6 +52,7 @@
 		border: 1px solid #eee;
 		padding: 0;
 		flex-wrap:wrap;
+		background:none;
 	}
 	.title{
 		padding: 0.2rem;
@@ -148,6 +152,9 @@
 }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
+	#header .title{
+		font-size: 20px;
+	}
 	#scroller1{
 		p{
 			font-size: 14px;
@@ -178,6 +185,9 @@
 }
 
 @media only screen and (max-width: 320px) {
+	#header .title{
+		font-size: 16px;
+	}
 	#scroller1{
 		p{
 			font-size: 12px;

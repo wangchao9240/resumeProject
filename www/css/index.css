@@ -468,7 +468,7 @@ body {
   align-items: center;
   height: auto;
   /* border-bottom: 1px solid #ccc; */
-  /* background: url('line.svg') left bottom repeat-x; */
+  background: url("line.svg") left bottom repeat-x;
   border-top: 1px solid #fff;
   background-color: #fff;
   font-size: 16px; }
@@ -3546,9 +3546,11 @@ body {
     display: flex;
     display: -webkit-flex;
     align-items: center;
-    padding: 0 0.1rem; }
+    padding: 0 0.15rem; }
   #header .iconfont {
     font-size: 0.4rem; }
+  #header .title {
+    font-size: 26px; }
 
 .active {
   background-color: #333; }
@@ -3576,7 +3578,8 @@ body {
     margin: 0.2rem 0.1rem 0.2rem 0.1rem;
     border: 1px solid #eee;
     padding: 0;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    background: none; }
   #scroller2 .title, #scroller3 .title {
     padding: 0.2rem;
     width: 100%;
@@ -3648,6 +3651,8 @@ body {
   width: 0.8rem; }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
+  #header .title {
+    font-size: 20px; }
   #scroller1 p {
     font-size: 14px; }
     #scroller1 p:nth-of-type(1) {
@@ -3661,6 +3666,8 @@ body {
     margin-left: 0.2rem; } }
 
 @media only screen and (max-width: 320px) {
+  #header .title {
+    font-size: 16px; }
   #scroller1 p {
     font-size: 12px; }
     #scroller1 p:nth-of-type(1) {
