@@ -106,7 +106,8 @@ body {
 	justify-content:space-between;
 	align-items:center;
 	height:auto;
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
+	/* background: url('line.svg') left bottom repeat-x; */
 	border-top: 1px solid #fff;
 	background-color: #fff;
 	font-size: 16px;

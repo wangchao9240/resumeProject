@@ -46,14 +46,14 @@
 	background-color: #fff;
 	li{
 		margin: 0.2rem 0.1rem 0.2rem 0.1rem;
-		border: 2px solid #eee;
+		border: 1px solid #eee;
 		padding: 0;
 		flex-wrap:wrap;
 	}
 	.title{
 		padding: 0.2rem;
 		width: 100%;
-		border-bottom: 1px solid #eee;
+		background:url('line.svg') left bottom repeat-x;
 		display: flex;
 			display: -webkit-flex;
 		align-items:center;
