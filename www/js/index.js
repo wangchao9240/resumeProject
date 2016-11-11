@@ -300,7 +300,7 @@
 							e.preventDefault();
 						}, false);
 						project = false;
-					}, 500)
+					}, 800)
 				}
 			})
 		}
