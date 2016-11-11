@@ -467,7 +467,8 @@ body {
   justify-content: space-between;
   align-items: center;
   height: auto;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  /* background: url('line.svg') left bottom repeat-x; */
   border-top: 1px solid #fff;
   background-color: #fff;
   font-size: 16px; }
@@ -3573,13 +3574,13 @@ body {
   background-color: #fff; }
   #scroller2 li, #scroller3 li {
     margin: 0.2rem 0.1rem 0.2rem 0.1rem;
-    border: 2px solid #eee;
+    border: 1px solid #eee;
     padding: 0;
     flex-wrap: wrap; }
   #scroller2 .title, #scroller3 .title {
     padding: 0.2rem;
     width: 100%;
-    border-bottom: 1px solid #eee;
+    background: url("line.svg") left bottom repeat-x;
     display: flex;
     display: -webkit-flex;
     align-items: center; }
@@ -3636,7 +3637,8 @@ body {
 #scroller4 .myInfo li {
   margin: 0;
   padding: 0.1rem;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  background: url("line.svg") left bottom repeat-x; }
 
 #scroller4 .myDetails {
   margin-left: 0.2rem; }
