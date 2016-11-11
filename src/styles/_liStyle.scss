@@ -1,0 +1,207 @@
+//字体文件的初始化
+#header{			//列表样式自定义的设置
+	display: flex;
+		display: -webkit-flex;
+	justify-content:space-between;
+	div{
+		height: 100%;
+		display: flex;
+			display: -webkit-flex;
+		align-items:center;
+		padding: 0 0.1rem;
+	}
+	.iconfont{
+		font-size: 0.4rem;
+	}
+}
+
+.active{
+	background-color: #333;
+}
+
+//第一页技能列表
+#scroller1{
+	li img{
+		width: 1rem;
+	}
+	.infoContainer{
+		flex:1;
+		margin-left: 0.5rem;
+	}
+	p{
+		font-size: 20px;
+		color: #737373;
+		margin: 0.03rem 0;
+		&:nth-of-type(1){
+			color: #333;
+			font-weight: bold;
+			font-size: 24px;
+			margin: 0.05rem 0;
+		}
+	}
+}
+
+//第二页项目样式
+#scroller2{
+	background-color: #fff;
+	li{
+		margin: 0.2rem 0.1rem 0.2rem 0.1rem;
+		border: 2px solid #eee;
+		padding: 0;
+		flex-wrap:wrap;
+	}
+	.title{
+		padding: 0.2rem;
+		width: 100%;
+		border-bottom: 1px solid #eee;
+		display: flex;
+			display: -webkit-flex;
+		align-items:center;
+		img{
+			width: 1.3rem;
+		}
+	}
+	.titleInfo{
+		color: #737373;
+		height: 100%;
+		margin-left: 0.2rem;
+		*{
+			margin: 0;
+		}
+		h2{
+			color: #333;
+			font-size: 28px;
+		}
+		p{
+			margin-top: 0.03rem;
+			font-size: 24px;
+		}
+	}
+	.info{
+		width: 100%;
+		padding: 0.2rem;
+		display: flex;
+			display: -webkit-flex;
+		flex-wrap:wrap;
+		justify-content: center;
+		&>img{
+			height: 1.5rem;
+		}
+	}
+	.details{
+		width: 100%;
+		margin-top: 0.2rem;
+		p{
+			color: #737373;
+			margin: 0;
+		}
+	}
+}
+
+//第三页经历样式
+#scroller3{
+	@extend #scroller2;
+}
+
+
+//第四页关于我样式
+
+#scroller4{
+	.infoContainer>li{
+		display: flex;
+			display: -webkit-flex;
+		padding: 0.1rem;
+		justify-content: center;
+		margin-top: 0.3rem;
+		&:nth-last-of-type(1){
+			margin-bottom: 0.3rem;
+		}
+		&:nth-of-type(2){
+			padding: 0 0.2rem;
+		}
+		&:nth-of-type(3){
+			padding: 0 0.2rem;
+		}
+	}
+	.headProt{
+		width: 1.5rem;
+		border-radius: 50%;
+		height: 1.5rem;
+		background:transparent url('../images/IMG_1340.JPG') left top no-repeat;
+		background-size: 100% 100%;
+	}
+	.myInfo{
+		li{
+			margin: 0;
+			padding: 0.1rem;
+			justify-content: flex-start;
+		}
+	}
+	.myDetails{
+		margin-left: 0.2rem;
+	}
+	.icon{
+		height: 0.8rem;
+		width: 0.8rem;
+	}
+}
+
+@media only screen and (max-width: 640px) and (min-width: 321px) {
+	#scroller1{
+		p{
+			font-size: 14px;
+			&:nth-of-type(1){
+				font-size: 18px;
+			}
+		}
+	}
+
+
+	#scroller2{
+		.titleInfo{
+			h2{
+				font-size: 24px;
+			}
+			p{
+				font-size: 18px;
+			}
+		}
+	}
+
+	#scroller4{
+		.myDetails{
+			font-size: 14px;
+			margin-left: 0.2rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#scroller1{
+		p{
+			font-size: 12px;
+			&:nth-of-type(1){
+				font-size: 14px;
+			}
+		}
+	}
+
+
+	#scroller2{
+		.titleInfo{
+			h2{
+				font-size: 16px;
+			}
+			p{
+				font-size: 12px;
+			}
+		}
+	}
+
+	#scroller4{
+		.myDetails{
+			font-size: 12px;
+			margin-left: 0.2rem;
+		}
+	}
+}
