@@ -371,48 +371,4 @@ $('#my').tap(function() {
 		})
 	}
 })
-
-// //调用微信接口
-$.post('http://2.592606942.applinzi.com/php/getSign.php',{
-        url:window.location.href
-    },function(data){
-        pos=data.indexOf('}');
-        dataStr=data.substring(0,pos+1);
-
-        objData=JSON.parse(dataStr);
-
-        wx.config({
-   		 debug: true,
-   		 appId:objData.appId,
-  		 timestamp: objData.timestamp,
-   		 nonceStr: objData.nonceStr,
-    	 signature: objData.signature,
-    	 jsApiList: [
-      		// 所有要调用的 API 都要加到这个列表中
-     		 'chooseImage','scanQRCode'
-    	 ]
-    })  
-});
-
-wx.ready(function() {
-	// 在这里调用 API
-	$('.back').tap(function(){
-		wx.chooseImage({
-			count: 1, // 默认9
-			sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-			sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-			success: function(res) {
-				var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-			}
-		});
-	})
-	$('.more').tap(function() {
-		wx.scanQRCode({
-			needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-			scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
-			success: function(res) {
-				var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-			}
-		});
-	})
-});
+//在这里去添加上面两个按钮的方法 微信调用接口，APP调用API
