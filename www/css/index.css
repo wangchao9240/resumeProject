@@ -3518,6 +3518,23 @@ body {
     height: 100%;
     align-items: center;
     justify-content: center; }
+    #footer div p {
+      margin: 0;
+      margin-left: 0.1rem;
+      font-size: 24px; }
+  #footer .iconfont {
+    font-size: 0.4rem; }
+
+#work .iconfont {
+  font-size: 0.6rem; }
+
+@media only screen and (max-width: 320px) {
+  #footer div p {
+    font-size: 12px; } }
+
+@media only screen and (min-width: 321px) and (max-width: 640px) {
+  #footer div p {
+    font-size: 18px; } }
 
 #header {
   display: flex;
